@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <!-- Angular -->
+    <script src="angular-1.7.2/angular.min.js"></script>
+    <script src="angular-1.7.2/angular-resource.min.js"></script>
+    <script src="angular-1.7.2/angular-sanitize.min.js"></script>
+    <script src="//unpkg.com/@uirouter/angularjs@1.0.5/release/angular-ui-router.js"></script>
+    <!-- <script src="angular-ui-router/angular-ui-router.js"></script> -->
+
+    <!-- App - [app, route, ctrl] -->
+    <script src="app.js"></script>
+    <script src="route.js"></script>
+    <script src="includes-controller.js"></script>
+
+    <title>Index</title>
+
+    <style>
+        .container {
+            margin-top: 150px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div ng-app="testApp" ng-controller="includesCtrl as vm">
+
+
+        <div class="ng-cloak">
+
+            <!-- Header -->
+            <header id="header" ng-controller="headerIncludesCtrl as vm" ng-include="vm.templateSrc">
+
+            </header>
+
+
+
+            <ui-view></ui-view>
+
+
+
+            <!-- Footer -->
+            <!-- <footer class="footer mt-auto py-3"
+                    ng-controller="footerIncludesCtrl as vm" 
+                    ng-include="vm.templateSrc">
+            </footer>
+     -->
+
+        </div>
+
+    </div>
+
+
+</body>
