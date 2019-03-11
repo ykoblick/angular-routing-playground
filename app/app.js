@@ -9,22 +9,37 @@ var testApp =
 
 
 
-// testApp.config(function ($stateProvider) {
-//    var helloState = {
-//       name: 'hello',
-//       url: '/hello',
-//       template: '<h3>hello world!</h3>'
-//    }
+testApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+   var homeState = {
+      name: 'home',
+      url: '/',
+      templateUrl: "home.html"
+   }
 
-//    var aboutState = {
-//       name: 'about',
-//       url: '/about',
-//       template: '<h3>Its the UI-Router hello world app!</h3>'
-//    }
+   var profileState = {
+      name: 'profile',
+      url: '/profile',
+      templateUrl: "profile.html",
+   }
 
-//    $stateProvider.state(helloState);
-//    $stateProvider.state(aboutState);
-// });
+    var profileDetailsState = { 
+      name: 'params',
+      url: '/profile/{id}',
+      templateUrl: "profile.html"
+    };
+
+   $stateProvider.state(homeState);
+   //$stateProvider.state(profileState);
+   $stateProvider.state(profileDetailsState);
+
+   $urlRouterProvider.otherwise('/');
+
+   $locationProvider.html5Mode({
+      enabled: true,
+      requireBase: false
+    });
+
+});
 
 
 /** ROOT SCOPE AND UTILS

@@ -13,13 +13,21 @@ testApp.config(function ($stateProvider, $urlRouterProvider, $locationProvider) 
         })
 
 
-        .state('profile', {
-            url: "/profile",
+        // .state('profile', {
+        //     url: "/profile",
+        //     templateUrl: "profile.html",
+        // })
+
+        // .state('profile', {
+        //     url: "/profile",
+        //     templateUrl: "profile.html",
+        // })
+
+        
+        .state('profile.happy', {
+            url: '/{personId}', 
             templateUrl: "profile.html",
         })
-
-
-    /* Newest */
 
 
 

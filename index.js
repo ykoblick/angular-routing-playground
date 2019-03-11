@@ -2,11 +2,12 @@ var http = require('http');
 var express = require('express');
 var app = express();
 var port = process.env.PORT || 1338;
+var serveStatic = require('serve-static');
 
  app.use(express.static('lib'));
  app.use(express.static('app'));
  app.use(express.static('templates'));
-
+ 
 
 //Home
 // app.get('*', function(req, res) 
@@ -14,6 +15,9 @@ var port = process.env.PORT || 1338;
 //     res.sendFile(__dirname + '/templates/index.html');
 //     //res.sendFile(__dirname + '/app/html/min/outer.html');
 // })
+
+
+//app.use(serveStatic(__dirname, {'index': ['/templates/index.html']}))
 
 app.all('/*', function(req, res, next) {
     // Just send the index.html for other files to support HTML5Mode
